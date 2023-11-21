@@ -3,6 +3,37 @@
 @section("content")
 
     <h1>Stazione</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sapiente dignissimos voluptas, cum dolore illo, consequuntur quod quaerat harum eaque labore libero voluptates modi accusantium nam expedita ea, quae pariatur adipisci. Temporibus, fuga expedita. Accusantium necessitatibus suscipit id laborum, vel a, mollitia quaerat voluptas ipsum consequatur in blanditiis aperiam officiis eveniet quis? Nobis sunt recusandae, possimus repellendus perspiciatis ipsam quam? Architecto nihil sequi ad unde blanditiis dolorem sit delectus quos facilis nam, id vel cumque quod illum officia inventore, ullam debitis provident fugit aperiam. Ipsam voluptatum officiis quos, architecto ex tempora similique facere quia illum corporis adipisci, tempore facilis accusamus.</p>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Compagnia</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Stazione di Partenza</th>
+                    <th scope="col">Orario di Partenza</th>
+                    <th scope="col">Stazione di Arrivo</th>
+                    <th scope="col">Orario di Arrivo</th>
+                    <th scope="col">Codice</th>
+                    <th scope="col">In Orario</th>
+                    <th scope="col">Cancellato</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach ($trains as $train)
+                <tr>
+                        <td>{{ $train->company }}</td>
+                        <td>{{ $train->type }}</td>
+                        <td>{{ $train->departure_station }}</td>
+                        <td>{{ $train->departure_time }}</td>
+                        <td>{{ $train->arrival_station }}</td>
+                        <td>{{ $train->arrival_time }}</td>
+                        <td>{{ $train->code }}</td>
+                        <td>{{ $train->in_time }}</td>
+                        <td>{{ $train->is_cancelled }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 
 @endsection
