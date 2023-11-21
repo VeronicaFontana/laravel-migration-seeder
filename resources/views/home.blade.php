@@ -2,7 +2,7 @@
 
 @section("content")
 
-    <h1>Stazione</h1>
+    <h1 class="text-light text-center my-5">Stazione di Milano</h1>
     <div class="container">
         <table class="table">
             <thead>
