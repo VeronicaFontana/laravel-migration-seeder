@@ -18,20 +18,20 @@ class TrainsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for($i = 0; $i > 10; $i++){
+        for($i = 0; $i < 10; $i++){
             $train = new Train();
             $train->reference = $faker->words(3, true);
-            $train->slug = $faker->Str::slug($train->reference, "-");
+            $train->slug = Str::slug($train->reference, "-");
             $train->company = $faker->randomElement(["Trenitalia", "Italo", "Ferrovie dello Stato", "Ferrovie Nord", "Ferrovie Sud", "Ferrovie Centro"]);
             $train->type = $faker->randomElement(["Regionale", "Alta Velocità", "Regionale Veloce", "Notturno"]);
             $train->departure_station = $faker->city;
             $train->arrival_station = $faker->city;
             $train->departure_time = $faker->time;
             $train->arrival_time = $faker->time;
-            $train->code = $faker->$faker->randomNumber(5, true);
-            $train->carriages = $faker->bothify("??###");
-            $train->in_time = $faker->randomElement("Y", "N");
-            $train->is_cancelled = $faker->randomElement("Y", "N");
+            $train->code = $faker->bothify("??###");
+            $train->carriages = $faker->randomElement([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+            $train->in_time = $faker->randomElement(["Y", "N"]);
+            $train->is_cancelled = $faker->randomElement(["Y", "N"]);
 
             $train->save();
         }
