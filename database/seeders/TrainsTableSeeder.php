@@ -21,7 +21,7 @@ class TrainsTableSeeder extends Seeder
         for($i = 0; $i > 10; $i++){
             $train = new Train();
             $train->reference = $faker->words(3, true);
-            $train->slug = $faker->words(3, true);
+            $train->slug = $faker->Str::slug($train->reference, "-");
             $train->company = $faker->randomElement(["Trenitalia", "Italo", "Ferrovie dello Stato", "Ferrovie Nord", "Ferrovie Sud", "Ferrovie Centro"]);
             $train->type = $faker->randomElement(["Regionale", "Alta Velocità", "Regionale Veloce", "Notturno"]);
             $train->departure_station = $faker->city;
