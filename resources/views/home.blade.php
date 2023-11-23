@@ -2,13 +2,12 @@
 
 @section("content")
 
-    <h1 class="text-light text-center my-5">Stazione - Orari di partenza e arrivo </h1>
+    <h1 class="text-light text-center my-5">Stazione - Partenze e Arrivi</h1>
     <div class="container">
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">Compagnia</th>
-                    <th scope="col">Tipo</th>
                     <th scope="col">Stazione di Partenza</th>
                     <th scope="col">Orario di Partenza</th>
                     <th scope="col">Stazione di Arrivo</th>
@@ -27,8 +26,17 @@
                         <td>{{ $train->arrival_station }}</td>
                         <td>{{ $train->arrival_time }}</td>
                         <td>{{ $train->code }}</td>
-                        <td>{{ $train->in_time }}</td>
-                        <td>{{ $train->is_cancelled }}</td>
+                        @if (($train->in_time) == 1)
+                            <td>Sì</td>
+                        @else
+                            <td>No</td>
+                        @endif
+
+                        @if (($train->is_cancelled) == 1)
+                            <td>Sì</td>
+                        @else
+                            <td>No</td>
+                        @endif
                 </tr>
                 @endforeach
             </tbody>
