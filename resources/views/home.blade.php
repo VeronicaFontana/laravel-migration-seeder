@@ -2,7 +2,7 @@
 
 @section("content")
 
-    <h1 class="text-light text-center my-5">Stazione di Milano</h1>
+    <h1 class="text-light text-center my-5">Stazione - Orari di partenza e arrivo </h1>
     <div class="container">
         <table class="table">
             <thead>
@@ -22,7 +22,6 @@
                 @foreach ($trains as $train)
                 <tr>
                         <td>{{ $train->company }}</td>
-                        <td>{{ $train->type }}</td>
                         <td>{{ $train->departure_station }}</td>
                         <td>{{ $train->departure_time }}</td>
                         <td>{{ $train->arrival_station }}</td>

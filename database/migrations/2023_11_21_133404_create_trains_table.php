@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('trains', function (Blueprint $table) {
             $table->id();
-            $table->string("reference", 100);
-            $table->string("slug", 100);
+            $table->string("reference", 100)->nullable();
+            $table->string("slug", 100)->nullable();
             $table->string("company", 100);
-            $table->string("type", 50);
+            $table->string("type", 50)->nullable();
             $table->string("departure_station", 150);
             $table->string("arrival_station", 150);
             $table->time("departure_time");
